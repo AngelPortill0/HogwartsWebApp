@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Actualizar Estudiante</h1>
+<form [formGroup]="updateForm">
+    <mat-form-field hintLabel="Max 20 caracteres" appearance="fill">
+        <mat-label>Nombre</mat-label>
+        <input matInput #input maxlength="20" placeholder="Ej. Tom" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Max 20 caracteres" appearance="fill">
+        <mat-label>Apellido</mat-label>
+        <input matInput #input maxlength="20" placeholder="Ej. Tom" formControlName="lastname">
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Max 2 caracteres" appearance="fill">
+        <mat-label>Edad</mat-label>
+        <input matInput #input maxlength="2" placeholder="Ej. 17" formControlName="age">
+    </mat-form-field>
+
+    <mat-form-field hintLabel="Max 10 caracteres" appearance="fill">
+        <mat-label>Número de Identidad</mat-label>
+        <input matInput #input maxlength="10" placeholder="Ej. 1666777" formControlName="identityNumber">
+    </mat-form-field>
+</form>
+
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close cdkFocusInitial (click)="updateStudent()">Ok</button>
+    <button mat-button mat-dialog-close>No</button>
+</div>

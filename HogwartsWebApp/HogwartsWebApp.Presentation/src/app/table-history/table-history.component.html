@@ -1,0 +1,97 @@
+<div class="table-wrapper">
+    <div class="filter-wrapper">
+        <mat-form-field class="search-form">
+
+            <mat-label>
+                <mat-icon>person_search</mat-icon>
+                Buscar
+            </mat-label>
+            <input matInput [(ngModel)]="searchKey" autocomplete="off" (keyup)="applySearchFilter()">
+            <button id="inputBtn" matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey"
+                (click)="onSearchClear()">
+                <mat-icon>
+                    clear
+                </mat-icon>
+            </button>
+        </mat-form-field>
+
+    </div>
+
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="history" matSort>
+
+            <ng-container matColumnDef="studentId">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Cod. Estudiantil
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.studentId}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Nombre
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.name}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="lastName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Apellido
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.lastName}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="age">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Edad
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.age}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="identityNumber">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>
+                    Número de Identidad
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.identityNumber}}</mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="actions">
+                <mat-header-cell id="actionText" *matHeaderCellDef>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Acciones
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    <button mat-icon-button
+                        (click)="openDialog([element.studentId, element.name, element.lastName, element.age, element.identityNumber])">
+                        <mat-icon color="primary">
+                            edit_road
+                        </mat-icon>
+                    </button>
+                    <button mat-icon-button (click)="triggerSwal(element.studentId)">
+                        <mat-icon color="warn">
+                            delete_sweep
+                        </mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="loading">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    Cargando los datos...
+                </mat-footer-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                    No se han encontrado datos 😔
+                </mat-footer-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayColumns"></mat-row>
+            <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide': history != null}"></mat-footer-row>
+            <mat-footer-row *matFooterRowDef="['noData']"
+                [ngClass]="{'hide': !(history != null && history.data.length == 0)}"></mat-footer-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[8, 16, 50]" [pageSize]="8"></mat-paginator>
+    </div>
+</div>

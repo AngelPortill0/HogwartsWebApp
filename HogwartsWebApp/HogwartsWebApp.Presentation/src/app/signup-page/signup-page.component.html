@@ -1,0 +1,47 @@
+<div class="content-wrapper">
+    <mat-card>
+        <mat-card-content>
+            <h2>Registro de Hechicero:</h2>
+
+            <form [formGroup]="signUpStudent" (ngSubmit)="rollupStudent()">
+                <mat-form-field hintLabel="Max 20 caracteres" appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput #input maxlength="20" placeholder="Ej. Tom" formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Max 20 caracteres" appearance="fill">
+                    <mat-label>Apellido</mat-label>
+                    <input matInput #input maxlength="20" placeholder="Ej. Riddle" formControlName="lastname">
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Max 10 caracteres" appearance="fill">
+                    <mat-label>Número de Identidad</mat-label>
+                    <input matInput #input maxlength="10" placeholder="Ej. 1666777" formControlName="identityNumber">
+                </mat-form-field>
+
+                <mat-form-field hintLabel="Max 2 caracteres" appearance="fill">
+                    <mat-label>Edad</mat-label>
+                    <input matInput #input maxlength="2" placeholder="Ej. 17" formControlName="age">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-icon matSuffix>house_siding</mat-icon>
+                    <mat-label> Selecciona una casa</mat-label>
+                    <mat-select formControlName="house">
+                        <ng-container *ngFor="let house of houses">
+                            <mat-option *ngFor="let item of house" value={{item.houseId}}>
+                                {{item.description}}
+                            </mat-option>
+                        </ng-container>
+                    </mat-select>
+                </mat-form-field>
+
+                <button mat-raised-button extended color="primary" type="submit" [disabled]="signUpStudent.invalid">
+                    Registrar
+                    <mat-icon>auto_fix_normal</mat-icon>
+                </button>
+            </form>
+
+        </mat-card-content>
+    </mat-card>
+</div>

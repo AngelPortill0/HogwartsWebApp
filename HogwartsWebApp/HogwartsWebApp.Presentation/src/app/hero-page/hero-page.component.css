@@ -1,0 +1,45 @@
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(245deg, rgb(24, 27, 44) 5%, rgba(10, 17, 59, 0.449) 57%, rgb(8, 12, 32) 100%), url(../../assets/img/Acceptance_Letter.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+div h1 {
+    font-size: 3rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1em;
+    color: #fff;
+    width: 60%;
+    margin: 0.3rem;
+}
+
+div p {
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.5rem;
+    color: #fff;
+    width: 45%;
+    margin: 1.5rem;
+}
+
+div button {
+    color: #fff;
+}
+
+a {
+    text-decoration: none;
+}

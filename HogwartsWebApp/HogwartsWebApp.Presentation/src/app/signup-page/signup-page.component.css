@@ -1,0 +1,43 @@
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+mat-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin-top: 3rem;
+    box-shadow: 1px 10px 15px 5px rgba(0, 0, 0, 0.2);
+}
+
+mat-card-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 3rem;
+}
+
+mat-card-content {
+    color: rgb(131, 131, 131)
+}
+
+mat-card-content form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: baseline;
+    align-items: center;
+}
+
+mat-form-field {
+    width: 20rem;
+    margin: 1rem 2rem 0 0;
+}
+
+mat-card-content button {
+    width: 45%;
+    margin: 2rem 0;
+}

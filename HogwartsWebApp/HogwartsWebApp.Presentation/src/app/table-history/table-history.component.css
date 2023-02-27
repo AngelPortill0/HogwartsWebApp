@@ -1,0 +1,38 @@
+.table-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 3rem 0;
+}
+
+.filter-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+#inputBtn {
+    margin-bottom: 0;
+    margin-right: 0;
+}
+
+.mat-elevation-z8 {
+    width: 80%;
+}
+
+mat-header-cell {
+    color: rgb(131, 131, 131)
+}
+
+mat-footer-row mat-footer-cell {
+    justify-content: center;
+}
+
+.hide {
+    display: none;
+}
+
+.search-form {
+    width: 100%;
+}

@@ -1,0 +1,51 @@
+@font-face {
+    font-family: HarryPotter;
+    src: url(../../assets/fonts/HARRYP.TTF);
+}
+
+#row1,
+.mat-toolbar-row {
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    background-color: #161e2c;
+}
+
+#row1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'HarryPotter';
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+}
+
+#row2 {
+    height: 2.5rem;
+    background-color: #3f51b5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: solid 1px #696b78;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#row2 a {
+    width: 5rem;
+    padding: 0.5rem 1.5rem;
+    margin: 0 1rem;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    transition: ease-in .5s;
+    border-bottom: solid 2.5px transparent;
+    font-weight: bold;
+}
+
+#row2 a:hover {
+    border-bottom: solid 2.5px #fff;
+}
